@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        /* Decendent Selecction (space) | Child Selection (>) | Direct Sibling (+) | All Sibling (~) */
+      #content {
+        background-color: red;
+      }
+      /* div#content ul li a {
+        color: greenyellow;
+      } */
+      article#content a {
+        color: greenyellow;
+      }
+      #content ~ div {
+        background-color: crimson;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <article id="content">
+      <ul>
+        <li>
+          <a href="#"> Home </a>
+        </li>
+      </ul>
+      <a href="#"> About </a>
+    </article>
+    <div id="content1">
+      <ul>
+        <li>
+          <a href="#"> Home </a>
+        </li>
+      </ul>
+      <a href="#"> About </a>
+    </div>
+    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, natus.</p> -->
+    <div>
+      Div Element Lorem ipsum dolor sit amet consectetur adipisicing elit. Est,
+      natus.
+    </div>
+    <div>
+      Div Element Lorem ipsum dolor sit amet consectetur adipisicing elit. Est,
+      natus.
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, natus.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, natus.</p>
+    <div>
+        Div Element Lorem ipsum dolor sit amet consectetur adipisicing elit. Est,
+        natus.
+      </div>
+</html>
