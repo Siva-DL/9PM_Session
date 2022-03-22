@@ -1,14 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <!-- Positions -->
-    <!-- DropDowns -->
-    <!-- sideNavagationBar -->
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      margin: 10px;
+      border: 1px solid;
+    }
+
+    .static {
+      position: static;
+      left: 1000px;
+    }
+
+    .relative {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border: 1px solid red;
+      right: 10px;
+      z-index: 0;
+    }
+
+    .absoulte {
+      position: absolute;
+      right: 10px;
+      width: 100px;
+      height: 100px;
+      bottom: 10px;
+      z-index: 0;
+    }
+
+    .fixed {
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      z-index: 11111;
+    }
+
+    .sticky {
+      background: green;
+      width: 100%;
+      top: 10px;
+      position: sticky;
+      z-index: -1;
+      /* height: 100vh; */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Positions -->
+  <!-- DropDowns -->
+  <!-- sideNavagationBar -->
+
+
+
+  <!-- static | relative | absoulte | fixed | sticky -->
+  <div class="static"> Static </div>
+  <div class="relative">
+    <div class="absoulte"> absoulte </div>
+    <div class="fixed"> fixed </div>
+  </div>
+
+
+  <div class="sticky"> sticky </div>
+  <article style="height: 200vh;"></article>
+</body>
+
 </html>
