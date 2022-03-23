@@ -1,0 +1,52 @@
+#mainHeader {
+  margin-top: 100px;
+}
+
+#logo {
+  border-bottom: 2px solid;
+}
+
+h2 {
+  text-align: end;
+  padding-top: 100px;
+  padding-right: 150px;
+  color: #fff;
+}
+
+.active {
+  text-decoration: overline #fff;
+}
+
+.mainSection {
+  overflow: auto;
+  height: 100vh;
+  /* float: left; */
+  /* width: 85%; */
+  flex-grow: 2;
+  scroll-behavior: smooth;
+}
+
+.sideNavagation {
+  height: 100vh;
+  padding: 10px;
+  /* float: left; */
+  /* width: 15%; */
+
+  flex-grow: 1;
+  text-align: center;
+}
+
+nav {
+  margin-top: 100px;
+}
+
+nav ul li {
+  padding: 10px;
+  border-bottom: 1px solid;
+  text-align: start;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+}

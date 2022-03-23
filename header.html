@@ -6,6 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
+  <!-- <link rel="stylesheet" href="./css/topNavagation.css"> -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/sideNavagation.css">
   <style>
     * {
       margin: 0px;
@@ -13,78 +16,92 @@
       box-sizing: border-box;
     }
 
+    body,
+    html {
+      scroll-behavior: smooth;
+    }
+
     main {
-      background: url(./images/geeks-g1d03473c9_1280.jpg) no-repeat center center fixed;
+      /* background: url(./images/geeks-g1d03473c9_1280.jpg) no-repeat center center fixed;
       background-size: cover;
+      height: 100vh; */
+      display: flex;
       height: 100vh;
     }
 
-    #mainHeader {
-      width: 100%;
-      padding: 10px;
-      background-color: rgba(80, 60, 32, 0.438);
-      /* position: fixed; */
-      position: fixed;
-      color: #fff;
-      top: 0px;
-    }
-
-    #logo {
-      float: left;
-    }
-
-    nav {
-      float: right;
-    }
-
-    ul li {
-      float: left;
-      list-style: none;
-      text-transform: uppercase;
-      margin-left: 25px;
-      padding-top: 10px;
-    }
-
-    #homePage {
+    #homePage,
+    #aboutSection,
+    #contactSection {
       /* height: 100vh; */
       padding-top: 100px;
       font-size: 42px;
       text-align: end;
+      background: url(./images/geeks-g1d03473c9_1280.jpg) no-repeat center center;
+      background-size: cover;
+      height: 100vh;
       /* background-color: lightskyblue; */
     }
 
-    h2 {
-      text-align: end;
-      padding-top: 100px;
-      padding-right: 150px;
-      color: #fff;
+    /* .contentWrap {
+      display: table;
+
     }
 
-    .clear {
-      clear: both;
+    .contentWrap h1 {      
+      vertical-align: bottom;
+
+    } */
+
+    #aboutSection {
+      background: url(./images/pexels-iconcom-719609.jpg) no-repeat center center;
+      background-size: cover;
+    }
+
+    #contactSection {
+      background: url(./images/pexels-eduardo-braga-1296726.jpg) no-repeat center center;
+      background-size: cover;
     }
   </style>
 </head>
 
 <body>
   <main>
-    <header id="mainHeader">
-      <div id="logo">
-        <h1>LOGO</h1>
-      </div>
-      <nav>
-        <ul>
-          <li>HOME</li>
-          <li>About</li>
-          <li>contcat</li>
-        </ul>
-      </nav>
-      <div class="clear"></div>
-    </header>
-    <article id="homePage">
-      <h2>Welcome to Homepage!</h2>
-    </article>
-    <section style="height: 180vh;"></section>
+    <aside class="sideNavagation ">
+      <header id="mainHeader">
+        <div id="logo">
+          <h1>LOGO</h1>
+        </div>
+        <nav>
+          <ul>
+            <li class="">
+              <a href="#homePage"> Home </a>
+            </li>
+            <li>
+              <a href="#aboutSection"> About </a>
+            </li>
+            <li>
+              <a href="#contactSection"> Contcat </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="clear"></div>
+      </header>
+    </aside>
+    <aside class="mainSection">
+      <article id="homePage">
+        <div class="contentWrap">
+          <h2>Welcome to Homepage!</h2>
+        </div>
+
+      </article>
+      <article id="aboutSection">
+        <h2>Welcome to aboutSection!</h2>
+      </article>
+      <article id="contactSection">
+        <h2>Welcome to contactSection!</h2>
+      </article>
+    </aside>
+    <div class="clear"></div>
   </main>
 
 </body>

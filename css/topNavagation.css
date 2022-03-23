@@ -1,0 +1,36 @@
+#mainHeader {
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(80, 60, 32, 0.438);
+  /* position: fixed; */
+  position: fixed;
+  color: #fff;
+  top: 0px;
+}
+
+#logo {
+  float: left;
+}
+
+nav {
+  float: right;
+}
+
+ul li {
+  float: left;
+  list-style: none;
+  text-transform: uppercase;
+  margin-left: 25px;
+  padding: 10px;
+  background-color: rgba(14, 13, 13, 0.797);
+}
+
+ul li:hover {
+  background-color: rgba(26, 24, 24, 0.797);
+  letter-spacing: 2px;
+}
+
+ul li a {
+  color: #fff;
+  text-decoration: none;
+}
