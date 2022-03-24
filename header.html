@@ -61,7 +61,27 @@
       background: url(./images/pexels-eduardo-braga-1296726.jpg) no-repeat center center;
       background-size: cover;
     }
+
+    .fa-solid {
+      font-size: 18px;
+      color: red;
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #aboutSection ul li {
+      width: 300px;
+      padding: 10px;
+      border: 1px solid;
+      font-size: 16px;
+      text-align: start;
+      background-color: #fff;
+    }
   </style>
+  <script src="https://kit.fontawesome.com/39442b0661.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -73,11 +93,13 @@
         </div>
         <nav>
           <ul>
-            <li class="">
-              <a href="#homePage"> Home </a>
+            <li class="menu-item">
+              <a href="#homePage" style="font-size: 18px;"> Home</a>
+              <i class="fa-solid fa-house"></i>
             </li>
-            <li>
+            <li class="menu-item">
               <a href="#aboutSection"> About </a>
+              <i class="fa-solid fa-user"></i>
             </li>
             <li>
               <a href="#contactSection"> Contcat </a>
@@ -96,6 +118,16 @@
       </article>
       <article id="aboutSection">
         <h2>Welcome to aboutSection!</h2>
+        <ul>
+          <li>
+            <img src="./images/icons/icons8-badge-96.png" alt="">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, repellendus. Harum non recusandae vel
+              corrupti pariatur possimus illum aut laboriosam ea error laborum, nesciunt dicta, at atque, accusamus
+              consectetur consequatur.
+            </p>
+          </li>
+        </ul>
       </article>
       <article id="contactSection">
         <h2>Welcome to contactSection!</h2>
