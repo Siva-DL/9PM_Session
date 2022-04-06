@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            -o-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 100px;
+            background-color: red;
+            position: fixed;
+            top: 0px;
+            height: 50px;
+            /* transition: 0.5s; */
+            -webkit-transition-duration: 0.5s;
+            -moz-transition-duration: 0.5s;
+            -ms-transition-duration: 0.5s;
+            -o-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+            transition-property: font-size, height;
+            /* transition-delay: 2s; */
+            transition-timing-function: cubic-bezier(.12, 1.32, .55, .02);
+        }
+
+        .box:hover {
+            /* width: 100%; */
+            height: 100vh;
+            font-size: 20px;
+        }
+
+        .transforms {
+            width: 75%;
+            margin: 100px auto;
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 50px;
+        }
+
+        .transforms li {
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            border: 1px solid;
+        }
+
+        .transforms li:first-child {
+            transform: scale(0.5, .5);
+            /* width: 300px; */
+            /* height: 300px; */
+            transition: 1s;
+        }
+
+        .transforms li:first-child:hover {
+            transform: scale(1, 1);
+            /* width: 300px; */
+            /* height: 300px; */
+        }
+
+        .transforms li:nth-child(2) {
+            transform: rotate(45deg);
+            /* width: 300px; */
+            /* height: 300px; */
+            transition: 1s;
+        }
+
+        .transforms li:nth-child(2):hover {
+            transform: rotate(3turn);
+            border-radius: 50%;
+            font-size: 40px;
+            /* width: 300px; */
+            /* height: 300px; */
+        }
+
+        .transforms li:nth-child(3) {
+            transform: translate(0px, 0px);
+            /* width: 300px; */
+            /* height: 300px; */
+            transition: 1s;
+        }
+
+        .transforms li:nth-child(3):hover {
+            transform: translate(200px, 200px);
+            /* width: 300px; */
+            /* height: 300px; */
+        }
+
+        .transforms li:nth-child(4) {
+            transform: skewY(0deg);
+            /* width: 300px; */
+            /* height: 300px; */
+            transition: 1s;
+        }
+
+        .transforms li:nth-child(4):hover {
+            transform: skewY(45deg);
+            /* width: 300px; */
+            /* height: 300px; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"> Box 1 </div>
+
+
+
+    <!-- Transforms: scale | rotate| translate | skew -->
+
+
+    <ul class="transforms">
+        <li>
+            scale
+        </li>
+        <li>
+            rotate
+        </li>
+        <li>
+            translate
+        </li>
+        <li>
+            skew
+        </li>
+    </ul>
+</body>
+
+</html>
