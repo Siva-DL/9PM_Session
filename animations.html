@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo,
+        .demo1 {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            margin: 200px auto;
+            border-radius: 50%;
+            border: 1px solid;
+            text-align: center;
+            line-height: 50px;
+            animation-name: demo;
+            animation-duration: 0.5s;
+            animation-iteration-count: infinite;
+            /* animation-direction: alternate; */
+            animation-timing-function:
+                linear;
+        }
+
+        .demo1 {
+            animation-name: demo1;
+            animation-duration: 0.6s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function:
+                ease-in;
+        }
+
+        @keyframes demo {
+            from {
+                /* margin-left: 0px; */
+                background-color: red;
+                transform: rotate(1turn);
+
+            }
+
+            to {
+                /* margin-left: 80%; */
+                background-color: greenyellow;
+                transform: rotate(2turn);
+            }
+        }
+
+        @keyframes demo1 {
+            from {
+                /* margin-left: 0px; */
+                background-color: red;
+                transform: scale(0.5, 0.5);
+            }
+
+            to {
+                /* margin-left: 80%; */
+                background-color: greenyellow;
+                transform: scale(1, 1);
+            }
+        }
+
+        .demo:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="demo">
+        ->
+    </div>
+    <div class="demo1">
+        <!-- demo -->
+    </div>
+</body>
+
+</html>
