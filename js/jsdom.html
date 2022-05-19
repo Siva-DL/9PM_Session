@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="one" class="one"> Hello!</h1>
+    <ul id="demoUl"></ul>
+    <script>
+        // JS: Selectors: id, class, elementName
+        const oneId = document.getElementById('one');
+        const oneClass = document.getElementsByClassName('one')[0];
+        const _H1 = document.getElementsByTagName('h1');
+
+        console.log(_H1);
+
+
+        console.log(document.getElementById('one'));
+        // getter and setter (=)
+        // set a value
+
+        // InnerText, innerHTML
+        // _H1[0].innerText = "<p>Macbook!</p>"
+        _H1[0].innerHTML = "<p>Macbook!</p>"
+
+        // get a value
+        // oneId.innerText = oneId.innerText.split('').join('-');
+        // console.log(oneId.innerText.split('').join('-'))
+
+
+        // 
+
+        const arr = ['test', 'test1', 'test2'];
+        let content = "";
+        for (let i = 0; i < arr.length; i++) {
+            content += `<li>${arr[i]}</li>`
+        }
+        console.log(content)
+
+        document.getElementById('demoUl').innerHTML = content;
+
+
+    </script>
+</body>
+
+</html>
