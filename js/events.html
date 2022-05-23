@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btnWrap {
+            width: 100px;
+            border: 1px solid;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="text" name="name" id="name">
+    <div id="btnWrap">
+        <button type="button" id="add"> Add </button>
+    </div>
+
+    <script>
+        const _name = document.querySelector('#name');
+        const _add = document.querySelector('#add');
+
+
+
+        // Events
+
+        // element.addEventListener('eventName', cb, false)
+        const arr = [];
+        _add.addEventListener('click', function () {
+            // _name.value = "New Vvalue";
+            // console.log(_name.value)
+            alert(0);
+            if (_name.value.length === 0) {
+                // alert('Please enter a value..!');
+            } else {
+                arr.push(_name.value)
+                _name.value = "";
+                console.log(arr)
+            }
+        }, true)
+
+
+
+
+
+        document.querySelector('#btnWrap').addEventListener('click', function () {
+            alert(1);
+        }, true)
+
+        // Element.eventName = fn();
+        // _add.onclick = function () {
+        //     Add('*');
+        // }
+
+        function Add(a) {
+            if (_name.value.length === 0) {
+                alert('Please enter a value..!');
+            } else {
+                // {name: input.value}
+                arr.push(_name.value + a)
+                _name.value = "";
+                console.log(arr);
+
+                // loop
+                // add it to <li>
+                // innerHtml <ul id="ul">
+            }
+        }
+
+        // arr  = [{name:'test'}, {name:'test1'}]
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
