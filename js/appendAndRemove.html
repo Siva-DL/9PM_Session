@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tasks {
+            width: 75%;
+            margin: auto;
+        }
+
+        table,
+        td {
+            border: 1px solid;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #ccc;
+        }
+
+        table tr>td:nth-child(2) {
+            width: 20px;
+        }
+
+        #formWrap {
+            width: 50%;
+            margin: 50px auto;
+
+        }
+
+        .formWrap-item {
+            width: 50%;
+            margin: auto;
+        }
+
+        .formWrap-item>input,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="formWrap">
+        <div class="formWrap-item">
+            <input type="text" id="taskName">
+        </div>
+        <div class="formWrap-item">
+            <button type="button" id="add"> Add </button>
+        </div>
+    </div>
+
+    <table id="tasks">
+        <tr>
+            <td> task 1</td>
+            <td>
+                <button type="button"> Del </button>
+            </td>
+        </tr>
+        <tr>
+            <td> task 2</td>
+            <td>
+                <button type="button"> Del </button>
+            </td>
+        </tr>
+    </table>
+    <script>
+        const add = document.querySelector('#add');
+        const taskName = document.querySelector('#taskName');
+
+        add.onclick = function () {
+            // console.log(taskName.value = "x");
+
+            const TR = document.createElement('tr');
+
+            const TaskTd = document.createElement('td');
+            TaskTd.innerText = taskName.value;
+
+
+            const deleteTD = document.createElement('td');
+            const btnDel = document.createElement('button');
+            btnDel.innerText = "Del"
+
+
+            deleteTD.appendChild(btnDel);
+
+
+
+            // parent.appendChild(child);
+            TR.appendChild(TaskTd);
+            TR.appendChild(deleteTD);
+            console.log(TR);
+
+            const tasks = document.querySelector('#tasks');
+            tasks.appendChild(TR);
+
+        }
+
+        const tasks = document.querySelector('#tasks');
+
+        console.log(tasks.children[0].children[0].children[1].children[0]);
+        // var arr123 = tasks.children[0].children[0];
+
+        // for (var i = 0; i < arr123; i++) {
+        //     console.log(arr123[i].innerText);
+        // }
+
+
+
+
+        // function deleteRow(TrData) {
+        //     console.log(TrData.parentNode.parentNode)
+        // }
+    </script>
+</body>
+
+</html>

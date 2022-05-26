@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .alert {
+            background-color: rgb(200, 171, 74);
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid rgb(60, 60, 4);
+        }
+
+        div.p-20 {
+            padding: 20px !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="alert"> This is Alert! </div> -->
+    <div id="Demo">
+        text
+    </div>
+    <a id="urlTo">Link</a>
+    <img src="" alt="" id="Img">
+    <script>
+        const Demo = document.getElementById('Demo');
+        const urlTo = document.getElementById('urlTo');
+        const Img = document.getElementById('Img');
+        Demo.id = 'demo1';
+        Demo.className = 'demo1';
+        urlTo.href = "/home";
+        // Img.src = "1.jpg";
+        // console.log(Img.src);
+
+        Demo.setAttribute('class', 'alert');
+        urlTo.setAttribute('href', '/about');
+        Demo.setAttribute('style', 'background:red');
+
+
+
+
+
+        console.log(Demo.getAttribute('style'));
+
+        Demo.style.transition = "1s";
+        Demo.onclick = function () {
+            // Demo.style.padding = "20px";
+            Demo.setAttribute('class', 'alert p-20');
+        }
+
+        Demo.onmouseout = function () {
+            // Demo.style.padding = "10px";
+            // Demo.removeAttribute('class');
+            // debugger;
+            console.log(Demo.classList);
+            Demo.classList.remove('p-20');
+            console.log(Demo.classList)
+            Demo.className = Demo.classList[0];
+            // Demo.classList = Demo.classList.splice(1, 1);
+        }
+
+    </script>
+</body>
+
+</html>
