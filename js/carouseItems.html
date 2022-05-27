@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #demoEle {
+            height: 100vh;
+            background: url(../images/img1.jpg) no-repeat center;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <img src="../images/img1.jpg" alt="" id="ImgEle"> -->
+    <div id="demoEle">
+        <h1>Hello...</h1>
+    </div>
+    <script>
+        let i = 1;
+        setInterval(function () {
+            // console.log(`../images/${i++}.jpg`);
+            // document.querySelector('#ImgEle').src = `../images/img${i++}.jpg`;
+            document.querySelector('#demoEle').style.background = `url(../images/img${i++}.jpg) no-repeat center`;
+            if (i > 4) {
+                i = 1;
+            }
+        }, 2000)
+    </script>
+</body>
+
+</html>

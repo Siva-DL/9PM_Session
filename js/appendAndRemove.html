@@ -59,22 +59,25 @@
     </div>
 
     <table id="tasks">
-        <tr>
-            <td> task 1</td>
-            <td>
-                <button type="button"> Del </button>
-            </td>
-        </tr>
-        <tr>
-            <td> task 2</td>
-            <td>
-                <button type="button"> Del </button>
-            </td>
-        </tr>
+        <tbody id="tasksBody">
+            <tr>
+                <td> task 1</td>
+                <td>
+                    <button type="button"> Del </button>
+                </td>
+            </tr>
+            <tr>
+                <td> task 2</td>
+                <td>
+                    <button type="button"> Del </button>
+                </td>
+            </tr>
+        </tbody>
     </table>
     <script>
         const add = document.querySelector('#add');
         const taskName = document.querySelector('#taskName');
+        const tasksBody = document.querySelector('#tasksBody');
 
         add.onclick = function () {
             // console.log(taskName.value = "x");
@@ -99,26 +102,36 @@
             TR.appendChild(deleteTD);
             console.log(TR);
 
-            const tasks = document.querySelector('#tasks');
-            tasks.appendChild(TR);
+            tasksBody.appendChild(TR);
+
+
+            btnDel.onclick = function () {
+
+                debugger
+                console.log(this.parentNode.parentNode);
+                const TrtoDelete = this.parentNode.parentNode;
+                deleteRow(TrtoDelete)
+                // parenet.removeChild(child)
+                // tasksBody.removeChild(TrtoDelete);
+            }
 
         }
 
-        const tasks = document.querySelector('#tasks');
+        deleteOnLoad();
+        function deleteOnLoad() {
+            const tasks = document.querySelector('#tasksBody');
+            console.log(tasks.children);
+            for (var i in tasks.children) {
+                // TODO: check the error in console
+                tasks.children[i].children[1].children[0].onclick = function () {
+                    deleteRow(this.parentNode.parentNode);
+                }
+            }
+        }
 
-        console.log(tasks.children[0].children[0].children[1].children[0]);
-        // var arr123 = tasks.children[0].children[0];
-
-        // for (var i = 0; i < arr123; i++) {
-        //     console.log(arr123[i].innerText);
-        // }
-
-
-
-
-        // function deleteRow(TrData) {
-        //     console.log(TrData.parentNode.parentNode)
-        // }
+        function deleteRow(TrData) {
+            tasksBody.removeChild(TrData);
+        }
     </script>
 </body>
 
