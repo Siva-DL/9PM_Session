@@ -36,10 +36,18 @@
                 <div class="w-50 m-auto mt-5 mb-3">
                     <h1 class="mb-4 text-decoration-underline"> Form Template </h1>
 
-                    <div class="mb-3 d-flex bg-light">
+                    <div class="mb-3 bg-light input-group position-relative p-2">
                         <label for="userName" class="form-label"><i
                                 class="bi bi-person-fill text-dark fs-24 "></i></label>
-                        <input type="text" class="form-control bg-transparent" id="userName" placeholder="User Name">
+                        <input type="text" class="form-control bg-transparent " id="userName" placeholder="User Name">
+                        <!-- <span class="text-danger position-absolute top-0 err-userName d-none"> please enter a valid
+                            name</span> -->
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><i
+                                class="bi bi-person-fill text-dark fs-24 "></i></span>
+                        <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                            aria-describedby="basic-addon1">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
@@ -96,26 +104,49 @@
         const userName = document.querySelector('#userName');
         const password = document.querySelector('#password');
 
+        const stringRegEx = /^[a-zA-Z]+$/;
+        const numberRegEx = /^[0-9]{10,}$/; // numberRegEx.test(contact.val)
+        const passwordRegEx = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[a-zA-Z!#$%&? "])[a-zA-Z0-9!#$%&?]{8,20}$/; // password
+        const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,6}$/; // email 
+
 
         // console.log(JSON.parse(localStorage.getItem('person')));
         signup.onclick = function () {
-            let arr;
-            // if person is exist in localStorage, we have to it
-            // if no
-            if (localStorage.getItem('person')) {
-                arr = JSON.parse(localStorage.getItem('person'));
+            console.log(userName.value.length < 4)
+            if (!((stringRegEx).test(userName.value) && userName.value.length > 4)) {
+                console.log('is Not Valid')
+                // console.log(document.querySelector('.err-userName').className);
+                // document.querySelector('.err-userName').className = "text-danger position-absolute top-0 err-userName";
+                console.log(userName.parentNode.className);
+                userName.parentNode.className = "mb-3 bg-light input-group position-relative p-2 border border-5 border-danger";
+                return false;
+            } else if (password.value.length < 6) {
+                userName.parentNode.className = "mb-3 bg-light input-group position-relative p-2";
+                password.parentNode.className = "mb-3 bg-light input-group position-relative p-2 border border-5 border-danger";
+                return false;
             } else {
-                arr = [];
+                password.parentNode.className = "mb-3 bg-light input-group position-relative p-2";
+
+
+
+                let arr;
+                // if person is exist in localStorage, we have to it
+                // if no
+                if (localStorage.getItem('person')) {
+                    arr = JSON.parse(localStorage.getItem('person'));
+                } else {
+                    arr = [];
+                }
+
+                console.log({ userName: userName.value, password: password.value })
+                arr.push({ userName: userName.value, password: password.value });
+
+                console.log(arr);
+
+                // set into LocalStorage;
+                // to convert json into a string 
+                localStorage.setItem('person', JSON.stringify(arr));
             }
-
-            console.log({ userName: userName.value, password: password.value })
-            arr.push({ userName: userName.value, password: password.value });
-
-            console.log(arr);
-
-            // set into LocalStorage;
-            // to convert json into a string 
-            localStorage.setItem('person', JSON.stringify(arr));
         }
     </script>
 </body>
