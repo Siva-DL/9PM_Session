@@ -23,16 +23,17 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-lg-0">
                         <li class="nav-item ">
-                            <a class="nav-link active" aria-current="page" href="#" data-page="home.html">Home</a>
+                            <a class="nav-link active" aria-current="page" href="javascript:void(0)"
+                                data-page="home.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" data-page="about.html">About</a>
+                            <a class="nav-link" href="javascript:void(0)" data-page="about.html">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Gallery</a>
+                            <a class="nav-link" href="javascript:void(0)" data-page="gallery.html">Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="javascript:void(0)" data-page="contact.html">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -44,15 +45,41 @@
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
     <script>
-        fetchPages('./pages/notfound.html')
+        fetchPages('./pages/home.html')
+
+        let navItem = document.getElementsByClassName('nav-item');
+        for (let i = 0; i < navItem.length; i++) {
+            navItem[i].onclick = function () {
+                console.log(this.children[0].getAttribute('data-page'));
+                // console.log(this.getAttribute('data-page'));
+                fetchPages(`./pages/${this.children[0].getAttribute('data-page')}`)
+            }
+        }
+
+
+
+
         function fetchPages(url) {
             fetch(url)
                 .then((res) => {
-                    return res.text()
+                    if (res.status !== 404) {
+                        return res.text()
+                    }
                 })
                 .then((data) => {
                     console.log(data);
-                    document.querySelector('#pagesWraper').innerHTML = data;
+                    if (data === undefined) {
+                        document.querySelector('#pagesWraper').innerHTML = `<div class="container-fluid">
+                            <div class="row vh-100 align-items-center">
+                                <div class="col">
+                                    <h1> NotFound </h1>
+                                </div>
+                            </div>
+                        </div>`
+                    } else {
+                        document.querySelector('#pagesWraper').innerHTML = data;
+                    }
+
                 })
         }
 

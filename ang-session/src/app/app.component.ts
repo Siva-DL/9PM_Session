@@ -17,6 +17,7 @@ export class AppComponent {
   isColors: [number, string] = [1, '1'];
   person = { name: 'test', age: 121 };
   isObj: { name: string; age: number } = this.person;
+  isSpecial = false;
 
   // interfaces, enums
 
