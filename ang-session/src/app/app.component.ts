@@ -10,6 +10,7 @@ export class AppComponent {
     console.log(this.demo(10));
     this.title = 'test';
     this.getProducts();
+    this.isUserLocationMatched();
   }
   title: string = 'ang-session';
   constact: number = 1111111;
@@ -18,6 +19,27 @@ export class AppComponent {
   person = { name: 'test', age: 121 };
   isObj: { name: string; age: number } = this.person;
   isSpecial = false;
+  userLocation = '1234';
+  users = [
+    {
+      name: 'xyz',
+      age: 123,
+    },
+    {
+      name: 'abc',
+      age: 13,
+    },
+    {
+      name: 'def',
+      age: 14,
+    },
+  ];
+
+  isUserLocationMatched() {
+    if (this.userLocation === '1234') {
+      this.isSpecial = true;
+    }
+  }
 
   // interfaces, enums
 

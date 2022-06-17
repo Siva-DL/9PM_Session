@@ -5,4 +5,8 @@
 
 .special {
   background-color: red;
+  text-align: center;
+  width: 300px;
+  font-weight: 900;
+  font-style: italic;
 }
