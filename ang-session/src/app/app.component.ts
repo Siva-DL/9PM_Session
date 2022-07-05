@@ -37,7 +37,7 @@ export class AppComponent {
 
   isUserLocationMatched() {
     if (this.userLocation === '1234') {
-      this.isSpecial = true;
+      this.isSpecial = false;
     }
   }
 

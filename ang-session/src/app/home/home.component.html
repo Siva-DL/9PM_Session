@@ -10,3 +10,18 @@
 
 <input type="text" name="userName" value="someX" [(ngModel)]="demoName">
 <div class="alert alert-success w-50 m-auto" *ngIf="demoName.length > 0"> {{ demoName }} </div>
+
+
+
+<!-- ngtemplate -->
+<div>{{getColor}}</div>
+<div [ngSwitch]="demoName">
+    <div *ngSwitchCase="'red'">
+        <p>
+            <img src="../../assets/images/card.png" alt="card">
+        </p>
+    </div>
+    <div *ngSwitchCase="'green'"> This has some value {{demoName}}</div>
+    <div *ngSwitchCase="'blue'"> This has some value {{demoName}}</div>
+    <div *ngSwitchDefault> This does not have color...! </div>
+</div>

@@ -1,1 +1,9 @@
 <p>main works!</p>
+
+{{isCheck}}
+
+<ul>
+    <li *ngFor="let user of users" [ngClass]=" user.age < 123    ? 'special'   : ''">
+        {{user.name}}
+    </li>
+</ul>
