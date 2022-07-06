@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-main',
@@ -9,5 +9,15 @@ export class MainComponent implements OnInit {
   constructor() {}
   @Input() isCheck: boolean | undefined;
   @Input() users: any;
+
+  // step1:
+  @Output() userTitle = new EventEmitter<string>();
+
   ngOnInit(): void {}
+
+  // step2:
+  addUserTitle(name: string) {
+    // alert(name);
+    this.userTitle.emit(name);
+  }
 }

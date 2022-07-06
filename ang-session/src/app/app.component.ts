@@ -35,6 +35,8 @@ export class AppComponent {
     },
   ];
 
+  fromChild: string = '';
+
   isUserLocationMatched() {
     if (this.userLocation === '1234') {
       this.isSpecial = false;
@@ -53,5 +55,10 @@ export class AppComponent {
       .then((res) => res.json())
       .then((data) => console.log(data))
       .then((err) => console.log(err));
+  }
+
+  // step5:
+  onBindData(name: any) {
+    this.fromChild = name;
   }
 }

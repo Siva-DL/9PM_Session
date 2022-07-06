@@ -1,17 +1,7 @@
 <app-header></app-header>
-<!-- Input#somex -->
-<!-- <div [ngClass]="isSpecial ? 'special' : ''">This div is special</div>
-<div class="special">This div is special</div>
-<div [ngStyle]="{ 'font-weight':   this.isSpecial    ? '900'   : '100'}">This div is special</div>
--->
-<!-- <ul>
-    <li *ngFor="let user of users" [ngClass]=" user.age < 123    ? 'special'   : ''">
-        {{user.name}}
-    </li>
-</ul> -->
-
-<router-outlet></router-outlet>
-<app-main [isCheck]="isSpecial" [users]="users"></app-main>
-
-
-<!-- ngFor With Tables -->
+<div class="container">
+    <h2 class="text-center">{{fromChild}}</h2>
+    <hr>
+</div>
+<!-- step4: -->
+<app-main [isCheck]="isSpecial" [users]="users" (userTitle)="onBindData($event)"></app-main>
