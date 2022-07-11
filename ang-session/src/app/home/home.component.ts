@@ -9,7 +9,23 @@ export class HomeComponent implements OnInit {
   isTrue = true;
   demoName = '';
   getColor = 'green';
-  constructor() {}
+  users!: {}[];
+  date!: Date;
+  constructor() {
+    this.users = [
+      {
+        name: 'Albania',
+        iso2: 'AL',
+        iso3: 'ALB',
+      },
+      {
+        name: 'Algeria',
+        iso2: 'DZ',
+        iso3: 'DZA',
+      },
+    ];
+    this.date = new Date();
+  }
 
   ngOnInit(): void {}
 
