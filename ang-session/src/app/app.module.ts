@@ -8,6 +8,9 @@ import { HomeComponent } from './home/home.component';
 import { MainComponent } from './main/main.component';
 import { FormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './pagenotfound/page-not-found.component';
+import { DataService } from './data.service';
+
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,13 +23,14 @@ import { PageNotFoundComponent } from './pagenotfound/page-not-found.component';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       { path: 'main', component: MainComponent },
       { path: 'home', component: HomeComponent },
       { path: '**', component: PageNotFoundComponent },
     ]),
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
